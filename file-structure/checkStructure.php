@@ -9,33 +9,11 @@ class scanDirectory
 {
 	public $db = '';
 	public $html = '';
-	// public $array = array(
-	//    	array('id' => 1, 'title' => 'Flash', 'parentId' => 0, 'mainDirectory' => 'c:/Drivers'),
-	//     array('id' => 2, 'title' => '20210508.11315467', 'parentId' => 1, 'mainDirectory' => 'c:/Drivers/Flash'),
-	//     array('id' => 3, 'title' => 'CUCN27WW_71WW.exe',
-	//         'parentId' => 2,
-	//         'mainDirectory' => 'c:/Drivers/Flash/20210508.11315467',
-	//     ),
-	//     array(
-	//         'id' => 4,
-	//         'title' => '20221506.21495691',
-	//         'parentId' => 3,
-	//         'mainDirectory' => 'c:/Drivers/Flash',
-	//     ),
-	//     array(
-	//         'id' => 5,
-	//         'title' => 'CUCN29WW_73WW.exe',
-	//         'parentId' => 4,
-	//         'mainDirectory' => 'c:/Drivers/Flash/20221506.21495691'
-	//     )
-	// );
 
 	function __construct($conn)
 	{
 		$this->db = $conn;
 	}
-
-
 
 	public function checkDir(string $dir) {
 
@@ -46,8 +24,8 @@ class scanDirectory
 		}
 	    
 	    // prevent empty ordered elements
-	    if (is_array($list) && count($list) < 1) {
-	    	$this->saveDir($dir, $list);
+	    if (!is_array($list) || count($list) < 1) {
+	    	//$this->saveDir($dir, $list);
 	        return false;
 	    }
 

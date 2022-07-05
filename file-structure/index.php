@@ -11,48 +11,36 @@
 		<!-- Main content -->
 	    <section class="content">
 	      	<div class="container-fluid">
-				    <div class="row">
-			          <div class="col-12">
+				    <div class="row justify-content-center p-2">
+			          <div class="col-8">
 			            <!-- Custom Tabs -->
 			            <div class="card" id="parentDiv">
 							<div class="card-header d-flex p-0">
-								<h3 class="card-title p-3">Multi Contact Form</h3>
-								<ul class="nav nav-pills ml-auto p-2">
-								  <li class="nav-item"></li>&nbsp;
-								  <li class="nav-item"><button class="btn btn-info" id="validateForm" onclick="validateForm()">Validate</button></li>&nbsp;
-								  <li class="nav-item"><button class="btn btn-info" onclick="subForm()">Save Contact</button></li>
-								</ul>
+								<h3 class="card-title p-3">File Structure</h3>
 							</div><!-- /.card-header -->
 							<!-- form start -->
-							
-					       
-					        	
+ 	
 						        <div class="col-sm-12">
 					                <div class="card-body">
 					                  <div class="form-group row">
-					                    <label for="inputPassword3" class="col-sm-2 col-form-label">Scan Directory</label>
-					                    <div class="col-sm-4">
+					                    <label for="inputPassword3" class="col-sm-4 col-form-label">Scan Directory</label>
+					                    <div class="col-sm-6">
 					                    <form class="form-horizontal form" method="post" name="">
-					                      	<select class="form-control" name="scanDirectory">
-												<option>Select Directory</option>
-												<option value="c:/" <?php echo (isset($_POST['scanDirectory']) && $_POST['scanDirectory'] == "c:/") ? "selected" : ''?>>C:/</option>
-												<option value="d:/" <?php echo (isset($_POST['scanDirectory']) && $_POST['scanDirectory'] == "d:/") ? "selected" : ''?>>D:/</option>
-												<option value="e:/" <?php echo (isset($_POST['scanDirectory']) && $_POST['scanDirectory'] == "e:/") ? "selected" : ''?>>E:/</option>
-												<option value="f:/" <?php echo (isset($_POST['scanDirectory']) && $_POST['scanDirectory'] == "f:/") ? "selected" : ''?>>F:/</option>
-				                        	</select>
+					                    	<input class="form-control" type="text" name="scanDirectory" placeholder="Scan a directory..">
+					                    	<span class="alert-danger">* Please enter a correct path to run scan.</span>
 					                    </div>
-					                    <div class="col-sm-4">
+					                    <div class="col-sm-2">
 					                    	<button type="submit" class="btn btn-info">Scan</button>
 					                    </div>
 					                	</form>
 					                  </div>
 					                  <div class="form-group row">
-					                    <label for="inputPassword3" class="col-sm-2 col-form-label">Scan Directory</label>
-					                    <div class="col-sm-4">
+					                    <label for="inputPassword3" class="col-sm-4 col-form-label">Search Directory</label>
+					                    <div class="col-sm-6">
 					                    <form class="form-horizontal form" method="post" name="">
 					                    	<input class="form-control" type="text" name="searchDirectory" placeholder="Search a directory..">
 					                    </div>
-					                    <div class="col-sm-4">
+					                    <div class="col-sm-2">
 					                    	<button type="submit" class="btn btn-info">Search</button>
 					                    </div>
 					                    </form>
